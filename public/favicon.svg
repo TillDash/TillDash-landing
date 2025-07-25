@@ -1,0 +1,16 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="16" cy="16" r="16" fill="#2563eb"/>
+  
+  <!-- Shopping cart icon -->
+  <path d="M6 6h2l1.68 8.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L26 8H8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  
+  <!-- Cart wheels -->
+  <circle cx="10" cy="25" r="1" fill="white"/>
+  <circle cx="22" cy="25" r="1" fill="white"/>
+  
+  <!-- Scan lines -->
+  <line x1="12" y1="12" x2="20" y2="12" stroke="white" stroke-width="1" opacity="0.8"/>
+  <line x1="12" y1="14" x2="18" y2="14" stroke="white" stroke-width="1" opacity="0.6"/>
+  <line x1="12" y1="16" x2="19" y2="16" stroke="white" stroke-width="1" opacity="0.8"/>
+</svg>
