@@ -2,7 +2,7 @@ import { ArrowRight, Check, ShoppingCart, Clock } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <section className="bg-gradient-to-br from-purple-600 via-blue-600 to-indigo-800 pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden relative">
+    <section className="bg-gradient-to-br from-[var(--primary-blue)] via-[var(--primary-blue-dark)] to-[var(--dark-blue)] pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden relative">
       {/* Background Shapes */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
         <div className="absolute top-[10%] left-[5%] w-64 h-64 rounded-full bg-yellow-400 opacity-20 blur-3xl animate-pulse"></div>
@@ -162,7 +162,7 @@ const Hero = () => {
         </div>
         
         {/* Trust indicators */}
-        <div className="mt-16 md:mt-24 flex flex-col items-center">
+        {/* <div className="mt-16 md:mt-24 flex flex-col items-center">
           <div className="text-white/60 text-sm uppercase tracking-wider mb-4">Trusted by leading retailers</div>
           <div className="flex flex-wrap justify-center items-center gap-8 opacity-70">
             <div className="h-8 px-4 py-2 bg-white/10 rounded text-white/60 font-medium text-sm">RetailCorp</div>
@@ -171,7 +171,7 @@ const Hero = () => {
             <div className="h-8 px-4 py-2 bg-white/10 rounded text-white/60 font-medium text-sm">FreshMarket</div>
             <div className="h-8 px-4 py-2 bg-white/10 rounded text-white/60 font-medium text-sm">TechStore</div>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );
