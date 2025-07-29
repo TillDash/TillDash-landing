@@ -74,7 +74,7 @@ const getFeatureColor = (index: number) => {
 const Features = () => {
 
   return (
-    <section id="features" className="py-20 md:py-32 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 relative overflow-hidden">
+    <section id="features" className="py-20 md:py-32 bg-gradient-to-br from-[var(--light-blue)] via-purple-50 to-[var(--light-gray)] relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute top-0 left-0 w-full h-full">
         <div className="absolute top-1/4 right-0 w-1/2 h-1/2 bg-gradient-to-bl from-yellow-200/30 to-orange-200/30 rounded-full blur-3xl animate-pulse"></div>
@@ -84,7 +84,7 @@ const Features = () => {
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-20">
-          <span className="bg-gradient-to-r from-purple-100 to-blue-100 text-purple-700 text-sm font-bold px-6 py-3 rounded-full inline-block mb-6 border border-purple-200 shadow-lg">✨ FEATURES</span>
+          <span className="bg-gradient-to-r from-[var(--light-blue)] to-blue-100 text-purple-700 text-sm font-bold px-6 py-3 rounded-full inline-block mb-6 border border-purple-200 shadow-lg">✨ FEATURES</span>
           <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-600 bg-clip-text text-transparent">Why Choose TillDash?</h2>
           <p className="text-lg text-gray-700 font-medium">
             Experience the future of retail with our comprehensive self-checkout solution
@@ -145,7 +145,7 @@ const Features = () => {
                 <div className="mt-8">
                   <a 
                     href="#how-it-works" 
-                    className="bg-primary text-white hover:bg-primary/90 px-6 py-3 rounded-lg font-medium transition-colors shadow-md hover:shadow-lg inline-block"
+                    className="bg-[var(--dark-blue)] text-[var(--light-blue)] hover:bg-[var(--primary-blue)]/90 px-6 py-3 rounded-lg font-medium transition-colors shadow-md hover:shadow-lg inline-block"
                   >
                     See How It Works
                   </a>
@@ -153,11 +153,11 @@ const Features = () => {
               </div>
               <div className="relative">
                 <div className="absolute -top-10 -right-10 w-40 h-40 bg-accent/10 rounded-full blur-xl"></div>
-                <div className="relative z-10 rounded-xl overflow-hidden shadow-xl border border-gray-200">
+                <div className="relative z-10 rounded-xl overflow-hidden shadow-xl border border-[var(--light-gray)]">
                   <div className="rounded-lg shadow-lg w-full bg-gradient-to-br from-primary/10 to-accent/10 aspect-video flex items-center justify-center">
                     <div className="text-center">
                       <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mb-4 mx-auto">
-                        <Scan className="w-8 h-8 text-white" />
+                        <Scan className="w-8 h-8 text-[var(--dark-blue)]" />
                       </div>
                       <p className="text-gray-700 font-medium">Smart Scanning Technology</p>
                       <p className="text-gray-500 text-sm mt-1">Advanced barcode recognition</p>

@@ -68,7 +68,7 @@ const HowItWorks = () => {
   const [activeStep, setActiveStep] = useState<number | null>(null);
 
   return (
-    <section id="how-it-works" className="py-20 md:py-32 bg-gradient-to-br from-indigo-50 via-blue-50 to-purple-50 relative overflow-hidden">
+    <section id="how-it-works" className="py-20 md:py-32 bg-gradient-to-br from-[var(--light-blue)] via-purple-50 to-[var(--light-gray)] relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute top-0 left-0 w-full h-full">
         <div className="absolute top-1/4 right-0 w-1/2 h-1/2 bg-gradient-to-bl from-green-200/40 to-blue-200/40 rounded-full blur-3xl animate-pulse"></div>
@@ -157,7 +157,7 @@ const HowItWorks = () => {
           </div>
         </div>
 
-        <div className="mt-24 text-center bg-gradient-to-r from-primary to-accent p-8 md:p-12 rounded-2xl text-white shadow-xl max-w-5xl mx-auto">
+        <div className="mt-24 text-center bg-gradient-to-r from-[var(--primary-blue)] to-[var(--accent-cyan)] p-8 md:p-12 rounded-2xl text-[var(--dark-blue)] shadow-xl max-w-5xl mx-auto">
           <h3 className="text-3xl font-bold mb-6">Ready to transform your shopping experience?</h3>
           <p className="text-lg mb-8 opacity-90 max-w-2xl mx-auto">
             Join thousands of satisfied shoppers who have saved time and enjoyed a seamless checkout experience with TillDash.

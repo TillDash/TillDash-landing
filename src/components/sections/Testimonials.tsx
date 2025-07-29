@@ -60,7 +60,7 @@ const Testimonials = () => {
   };
 
   return (
-    <section id="testimonials" className="py-20 md:py-32 bg-gray-50 relative overflow-hidden">
+    <section id="testimonials" className="py-20 md:py-32 bg-gradient-to-bl from-[var(--light-blue)] via-purple-50 to-[var(--light-gray)] relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute top-0 left-0 w-full h-full">
         <div className="absolute top-20 left-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl"></div>
@@ -126,7 +126,7 @@ const Testimonials = () => {
                       <button
                         key={idx}
                         onClick={() => goToTestimonial(idx)}
-                        className={`w-3 h-3 rounded-full transition-all duration-300 ${activeIndex === idx ? 'bg-primary w-6' : 'bg-gray-300'}`}
+                        className={`w-3 h-3 rounded-full transition-all duration-300 ${activeIndex === idx ? 'bg-[var(--primary-blue)] w-6' : 'bg-[var(--light-gray)]'}`}
                         aria-label={`Go to testimonial ${idx + 1}`}
                       />
                     ))}
@@ -135,7 +135,7 @@ const Testimonials = () => {
                   <div className="flex gap-3">
                     <button
                       onClick={goToPrev}
-                      className="w-10 h-10 rounded-full bg-white border border-gray-200 flex items-center justify-center hover:bg-primary hover:text-white transition-colors"
+                      className="w-10 h-10 rounded-full bg-[var(--light-blue)] border border-[var(--light-gray)] flex items-center justify-center hover:bg-[var(--light-gray)] hover:text-[var(--white)] transition-colors"
                       aria-label="Previous testimonial"
                     >
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5">
@@ -144,7 +144,7 @@ const Testimonials = () => {
                     </button>
                     <button
                       onClick={goToNext}
-                      className="w-10 h-10 rounded-full bg-white border border-gray-200 flex items-center justify-center hover:bg-primary hover:text-white transition-colors"
+                      className="w-10 h-10 rounded-full bg-[var(--light-blue)] border border-[var(--light-gray)] flex items-center justify-center hover:bg-[var(--light-gray)] hover:text-[var(--white)] transition-colors"
                       aria-label="Next testimonial"
                     >
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5">
