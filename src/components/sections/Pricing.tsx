@@ -72,10 +72,10 @@ const Pricing = () => {
   const [billingCycle, setBillingCycle] = useState<'monthly' | 'yearly'>('monthly');
 
   return (
-    <section id="pricing" className="py-20 md:py-32 bg-white relative overflow-hidden">
+    <section id="pricing" className="py-20 md:py-32 bg-gradient-to-bl from-[var(--light-blue)] via-purple-50 to-[var(--light-gray)] relative overflow-hidden">
       {/* Background decorative elements */}
-      <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-gradient-to-bl from-primary/5 to-accent/5 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 left-0 w-1/3 h-1/3 bg-gradient-to-tr from-secondary/5 to-primary/5 rounded-full blur-3xl"></div>
+      <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-gradient-to-bl from-[var(--light-blue)] via-purple-50 to-[var(--light-gray)] rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 left-0 w-1/3 h-1/3 bg-gradient-to-tr from-[var(--light-blue)] via-purple-50 to-[var(--light-gray)] rounded-full blur-3xl"></div>
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
@@ -173,26 +173,26 @@ const Pricing = () => {
         
         {/* FAQ teaser */}
         <div className="mt-24 max-w-3xl mx-auto text-center">
-          <div className="bg-gray-50 rounded-xl p-8 border border-gray-100">
+          <div className="bg-gradient-to-r from-[var(--primary-blue)] to-[var(--accent-cyan)] rounded-xl p-8 border border-gray-100">
             <div className="flex justify-center mb-6">
               <div className="bg-primary/10 p-3 rounded-full">
                 <HelpCircle className="w-8 h-8 text-primary" />
               </div>
             </div>
             <h3 className="text-2xl font-bold mb-3">Have questions about our pricing?</h3>
-            <p className="text-gray-600 mb-6">
+            <p className="text-[var(--dark-blue)] mb-6">
               Check our frequently asked questions or contact our sales team for custom enterprise solutions.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <a 
                 href="#faq" 
-                className="px-6 py-3 bg-white border border-gray-200 rounded-lg font-medium hover:bg-gray-50 transition-colors"
+                className="px-6 py-3 bg-[var(--dark-blue)] text-[var(--light-blue)] rounded-lg font-medium hover:bg-gray-50 hover:text-[var(--dark-blue)] transition-colors"
               >
                 View FAQ
               </a>
               <a 
                 href="#contact" 
-                className="px-6 py-3 bg-primary text-white rounded-lg font-medium hover:bg-primary/90 transition-colors"
+                className="px-6 py-3 bg-[var(--primary-blue)] text-[var(--light-blue)] border border-[var(--light-gray)] rounded-lg font-medium hover:bg-primary/90 transition-colors"
               >
                 Contact Sales
               </a>

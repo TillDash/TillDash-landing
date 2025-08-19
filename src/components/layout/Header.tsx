@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import Logo from '/Logo.svg'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,11 +21,14 @@ const Header = () => {
     };
   }, []);
 
+  // "vite": "^7.0.6"
+
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-lg py-3' : 'bg-transparent py-5'}`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-custom-white shadow-lg py-3' : 'bg-transparent py-5'}`}>
       <div className="container mx-auto px-4 flex justify-between items-center">
         <div className="flex items-center space-x-2">
-          <span className={`text-2xl font-bold ${isScrolled ? 'text-primary' : 'text-white'}`}>TillDash</span>
+          {/* <span className={`text-2xl font-bold ${isScrolled ? 'text-primary' : 'text-white'}`}>TillDash</span> */}
+          <picture className='w-15'><img src={Logo} alt="" /></picture>
           <span className="text-xs bg-primary/20 text-primary px-2 py-1 rounded-full font-semibold">SELF-CHECKOUT</span>
         </div>
 
