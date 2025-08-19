@@ -37,8 +37,8 @@ const Header = () => {
           <a href="#features" className={`font-medium hover:text-primary transition-colors ${isScrolled ? 'text-gray-700' : 'text-white'}`}>Features</a>
           <a href="#how-it-works" className={`font-medium hover:text-primary transition-colors ${isScrolled ? 'text-gray-700' : 'text-white'}`}>How It Works</a>
           <a href="#for-business" className={`font-medium hover:text-primary transition-colors ${isScrolled ? 'text-gray-700' : 'text-white'}`}>For Business</a>
-          <a href="#testimonials" className={`font-medium hover:text-primary transition-colors ${isScrolled ? 'text-gray-700' : 'text-white'}`}>Testimonials</a>
-          <a href="#pricing" className={`font-medium hover:text-primary transition-colors ${isScrolled ? 'text-gray-700' : 'text-white'}`}>Pricing</a>
+          {/* <a href="#testimonials" className={`font-medium hover:text-primary transition-colors ${isScrolled ? 'text-gray-700' : 'text-white'}`}>Testimonials</a> */}
+          {/* <a href="#pricing" className={`font-medium hover:text-primary transition-colors ${isScrolled ? 'text-gray-700' : 'text-white'}`}>Pricing</a> */}
           <a href="#faq" className={`font-medium hover:text-primary transition-colors ${isScrolled ? 'text-gray-700' : 'text-white'}`}>FAQ</a>
         </nav>
 
