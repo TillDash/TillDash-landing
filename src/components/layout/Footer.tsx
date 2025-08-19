@@ -2,7 +2,7 @@ import { Facebook, Twitter, Instagram, Linkedin, Github, Heart } from 'lucide-re
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  
+
   const footerLinks = [
     {
       title: "Product",
@@ -63,7 +63,7 @@ const Footer = () => {
               </div>
             </div>
             <p className="text-gray-400 mb-6 max-w-md">
-              TillDash revolutionizes retail with our cutting-edge self-checkout solution. 
+              TillDash revolutionizes retail with our cutting-edge self-checkout solution.
               Skip the lines, scan as you shop, and enjoy a seamless checkout experience.
             </p>
             <div className="flex space-x-4">
@@ -84,7 +84,7 @@ const Footer = () => {
               </a>
             </div>
           </div>
-          
+
           {/* Footer links */}
           <div className="md:col-span-2 grid sm:grid-cols-2 md:grid-cols-2 gap-8">
             {footerLinks.slice(0, 2).map((column, index) => (
@@ -93,7 +93,7 @@ const Footer = () => {
                 <ul className="space-y-3">
                   {column.links.map((link, linkIndex) => (
                     <li key={linkIndex}>
-                      <a 
+                      <a
                         href={link.href}
                         className="text-gray-400 hover:text-primary transition-colors"
                       >
@@ -105,7 +105,7 @@ const Footer = () => {
               </div>
             ))}
           </div>
-          
+
           <div className="md:col-span-1 grid sm:grid-cols-2 md:grid-cols-2 gap-8">
             {footerLinks.slice(2, 4).map((column, index) => (
               <div key={index}>
@@ -113,7 +113,7 @@ const Footer = () => {
                 <ul className="space-y-3">
                   {column.links.map((link, linkIndex) => (
                     <li key={linkIndex}>
-                      <a 
+                      <a
                         href={link.href}
                         className="text-gray-400 hover:text-primary transition-colors"
                       >
@@ -126,7 +126,7 @@ const Footer = () => {
             ))}
           </div>
         </div>
-        
+
         {/* Newsletter subscription */}
         <div className="py-12 border-b border-gray-800">
           <div className="max-w-3xl mx-auto text-center">
@@ -150,13 +150,13 @@ const Footer = () => {
             </form>
           </div>
         </div>
-        
+
         {/* App store badges */}
         <div className="py-12 border-b border-gray-800 text-center">
           <h3 className="text-xl font-semibold mb-6">Download the TillDash App</h3>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <a 
-              href="#" 
+            <a
+              href="#"
               className="inline-flex items-center bg-black hover:bg-gray-800 text-white rounded-lg px-4 py-2 transition-colors"
             >
               <div className="mr-3">
@@ -169,9 +169,9 @@ const Footer = () => {
                 <div className="text-sm font-semibold font-sans -mt-1">App Store</div>
               </div>
             </a>
-            
-            <a 
-              href="#" 
+
+            <a
+              href="#"
               className="inline-flex items-center bg-black hover:bg-gray-800 text-white rounded-lg px-4 py-2 transition-colors"
             >
               <div className="mr-3">
@@ -187,24 +187,24 @@ const Footer = () => {
             </a>
           </div>
         </div>
-        
+
         {/* Bottom section with copyright */}
         <div className="pt-10 flex flex-col md:flex-row items-center justify-between">
           <p className="text-gray-400 text-sm mb-4 md:mb-0">
             &copy; {currentYear} TillDash. All rights reserved.
           </p>
-          
+
           <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 text-sm text-gray-400">
             <a href="/terms" className="hover:text-primary transition-colors">Terms</a>
             <a href="/privacy" className="hover:text-primary transition-colors">Privacy</a>
             <a href="/cookies" className="hover:text-primary transition-colors">Cookies</a>
             <a href="/sitemap" className="hover:text-primary transition-colors">Sitemap</a>
           </div>
-          
+
           <div className="mt-4 md:mt-0 text-sm text-gray-500 flex items-center">
             <span>Made with</span>
             <Heart className="w-4 h-4 mx-1 text-red-500 fill-red-500" />
-            <span>in San Francisco</span>
+            <span>in Kenya</span>
           </div>
         </div>
       </div>

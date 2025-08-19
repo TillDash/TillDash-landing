@@ -6,9 +6,9 @@ const contactOptions = [
     icon: <Phone size={24} />,
     title: 'Call Us',
     description: 'Speak directly with our support team',
-    detail: '+1 (555) 123-4567',
+    detail: '+254 111 539 848',
     action: 'Call now',
-    link: 'tel:+15551234567',
+    link: 'tel:+254111539848',
     color: 'bg-primary-50 text-primary'
   },
   {
@@ -40,9 +40,9 @@ const Contact = () => {
     message: '',
     type: 'General Inquiry',
   });
-  
+
   const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
-  
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormState(prev => ({
@@ -50,11 +50,11 @@ const Contact = () => {
       [name]: value
     }));
   };
-  
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setFormStatus('submitting');
-    
+
     // Simulate form submission
     setTimeout(() => {
       setFormStatus('success');
@@ -66,7 +66,7 @@ const Contact = () => {
         message: '',
         type: 'General Inquiry',
       });
-      
+
       // Reset form status after showing success message
       setTimeout(() => {
         setFormStatus('idle');
@@ -81,7 +81,7 @@ const Contact = () => {
         <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-primary/5 rounded-full blur-3xl"></div>
         <div className="absolute bottom-0 left-0 w-1/3 h-1/3 bg-accent/5 rounded-full blur-3xl"></div>
       </div>
-      
+
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="bg-primary/10 text-primary text-sm font-semibold px-4 py-2 rounded-full inline-block mb-4">CONTACT US</span>
@@ -90,7 +90,7 @@ const Contact = () => {
             Have questions or want to learn more about TillDash? We're here to help.
           </p>
         </div>
-        
+
         {/* Contact options */}
         <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-16">
           {contactOptions.map((option, index) => (
@@ -104,17 +104,17 @@ const Contact = () => {
               <h3 className="text-xl font-semibold mb-2">{option.title}</h3>
               <p className="text-gray-600 mb-3">{option.description}</p>
               <p className="font-medium text-gray-800 mb-4">{option.detail}</p>
-              <a 
+              <a
                 href={option.link}
                 className="inline-flex items-center justify-center font-medium text-primary hover:underline"
               >
                 {option.action}
-                <svg 
-                  xmlns="http://www.w3.org/2000/svg" 
-                  fill="none" 
-                  viewBox="0 0 24 24" 
-                  strokeWidth={1.5} 
-                  stroke="currentColor" 
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
                   className="w-4 h-4 ml-1"
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
@@ -123,21 +123,21 @@ const Contact = () => {
             </div>
           ))}
         </div>
-        
+
         {/* Contact form and map */}
         <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {/* Contact form */}
           <div className="bg-white rounded-2xl shadow-lg p-8 md:p-10">
             <h3 className="text-2xl font-bold mb-6">Send us a message</h3>
-            
+
             {formStatus === 'success' && (
               <div className="bg-green-50 border border-green-200 text-green-700 rounded-lg p-4 mb-6 flex items-center">
-                <svg 
-                  xmlns="http://www.w3.org/2000/svg" 
-                  fill="none" 
-                  viewBox="0 0 24 24" 
-                  strokeWidth={1.5} 
-                  stroke="currentColor" 
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
                   className="w-5 h-5 mr-2"
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
@@ -145,15 +145,15 @@ const Contact = () => {
                 Your message has been sent successfully! We'll get back to you soon.
               </div>
             )}
-            
+
             {formStatus === 'error' && (
               <div className="bg-red-50 border border-red-200 text-red-700 rounded-lg p-4 mb-6 flex items-center">
-                <svg 
-                  xmlns="http://www.w3.org/2000/svg" 
-                  fill="none" 
-                  viewBox="0 0 24 24" 
-                  strokeWidth={1.5} 
-                  stroke="currentColor" 
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
                   className="w-5 h-5 mr-2"
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -161,7 +161,7 @@ const Contact = () => {
                 There was an error sending your message. Please try again.
               </div>
             )}
-            
+
             <form onSubmit={handleSubmit}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                 <div>
@@ -179,7 +179,7 @@ const Contact = () => {
                     placeholder="John Smith"
                   />
                 </div>
-                
+
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
                     Email Address*
@@ -195,7 +195,7 @@ const Contact = () => {
                     placeholder="john@example.com"
                   />
                 </div>
-                
+
                 <div>
                   <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
                     Phone Number
@@ -210,7 +210,7 @@ const Contact = () => {
                     placeholder="+1 (555) 000-0000"
                   />
                 </div>
-                
+
                 <div>
                   <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-1">
                     Company
@@ -226,7 +226,7 @@ const Contact = () => {
                   />
                 </div>
               </div>
-              
+
               <div className="mb-6">
                 <label htmlFor="type" className="block text-sm font-medium text-gray-700 mb-1">
                   Inquiry Type*
@@ -246,7 +246,7 @@ const Contact = () => {
                   <option value="Press">Press/Media</option>
                 </select>
               </div>
-              
+
               <div className="mb-6">
                 <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
                   Message*
@@ -262,7 +262,7 @@ const Contact = () => {
                   placeholder="How can we help you?"
                 ></textarea>
               </div>
-              
+
               <div className="flex items-center mb-6">
                 <input
                   id="privacy"
@@ -275,7 +275,7 @@ const Contact = () => {
                   I agree to the <a href="#" className="text-primary hover:underline">Privacy Policy</a> and consent to being contacted regarding my request.
                 </label>
               </div>
-              
+
               <button
                 type="submit"
                 disabled={formStatus === 'submitting'}
@@ -298,7 +298,7 @@ const Contact = () => {
               </button>
             </form>
           </div>
-          
+
           {/* Map and address */}
           <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
             {/* Map placeholder - In a real implementation, this would be a Google Maps embed or similar */}
@@ -310,7 +310,7 @@ const Contact = () => {
                 </div>
               </div>
             </div>
-            
+
             <div className="p-8">
               <h3 className="text-xl font-bold mb-4">Visit Our Office</h3>
               <div className="space-y-4">
@@ -318,24 +318,24 @@ const Contact = () => {
                   <MapPin className="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" />
                   <div>
                     <p className="text-gray-800">
-                      123 Innovation Drive<br />
-                      Suite 500<br />
-                      San Francisco, CA 94103
+                      Mombasa Works<br />
+                      First Floor<br />
+                      Mombasa, Kenya
                     </p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-center">
                   <Phone className="w-5 h-5 text-primary mr-3 flex-shrink-0" />
-                  <p className="text-gray-800">+1 (555) 123-4567</p>
+                  <p className="text-gray-800">+254 111 539 848</p>
                 </div>
-                
+
                 <div className="flex items-center">
                   <Mail className="w-5 h-5 text-primary mr-3 flex-shrink-0" />
                   <p className="text-gray-800">info@tilldash.com</p>
                 </div>
               </div>
-              
+
               <div className="mt-6">
                 <h4 className="font-semibold mb-2">Business Hours</h4>
                 <table className="text-sm">

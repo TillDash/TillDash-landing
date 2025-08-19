@@ -78,8 +78,8 @@ const Header = () => {
             <a href="#features" className="block py-3 text-gray-700 hover:text-primary hover:bg-gray-50 rounded px-3 font-medium" onClick={() => setIsMenuOpen(false)}>Features</a>
             <a href="#how-it-works" className="block py-3 text-gray-700 hover:text-primary hover:bg-gray-50 rounded px-3 font-medium" onClick={() => setIsMenuOpen(false)}>How It Works</a>
             <a href="#for-business" className="block py-3 text-gray-700 hover:text-primary hover:bg-gray-50 rounded px-3 font-medium" onClick={() => setIsMenuOpen(false)}>For Business</a>
-            <a href="#testimonials" className="block py-3 text-gray-700 hover:text-primary hover:bg-gray-50 rounded px-3 font-medium" onClick={() => setIsMenuOpen(false)}>Testimonials</a>
-            <a href="#pricing" className="block py-3 text-gray-700 hover:text-primary hover:bg-gray-50 rounded px-3 font-medium" onClick={() => setIsMenuOpen(false)}>Pricing</a>
+            {/* <a href="#testimonials" className="block py-3 text-gray-700 hover:text-primary hover:bg-gray-50 rounded px-3 font-medium" onClick={() => setIsMenuOpen(false)}>Testimonials</a> */}
+            {/* <a href="#pricing" className="block py-3 text-gray-700 hover:text-primary hover:bg-gray-50 rounded px-3 font-medium" onClick={() => setIsMenuOpen(false)}>Pricing</a> */}
             <a href="#faq" className="block py-3 text-gray-700 hover:text-primary hover:bg-gray-50 rounded px-3 font-medium" onClick={() => setIsMenuOpen(false)}>FAQ</a>
             <div className="border-t border-gray-200 my-2"></div>
             <a href="/login" className="block py-3 text-gray-700 hover:text-primary hover:bg-gray-50 rounded px-3 font-medium" onClick={() => setIsMenuOpen(false)}>Log In</a>
