@@ -19,7 +19,7 @@ const Hero = () => {
                 <span className="w-1.5 h-1.5 bg-black rounded-full animate-ping inline-block"></span>
                 LAUNCHING SOON
               </span>
-              <span className="text-white text-sm font-medium">Mobile self-checkout built for Africa</span>
+              <span className="text-white text-sm font-medium hidden sm:inline">Mobile self-checkout built for Africa</span>
             </div>
             
             <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6 text-white drop-shadow-lg">
@@ -31,7 +31,7 @@ const Hero = () => {
               <span className="bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent"> with Ease</span>
             </h1>
             
-            <p className="text-xl max-w-xl mb-8 text-white font-medium drop-shadow-md leading-relaxed">
+            <p className="text-base sm:text-xl max-w-xl mb-8 text-white font-medium drop-shadow-md leading-relaxed">
               TillDash is the only self-checkout solution built for Africa's retail reality — shoppers scan products, pay instantly via M-Pesa or card, and walk out. No queues. No cashier lines. Built for the African market.
             </p>
             
@@ -133,8 +133,8 @@ const Hero = () => {
                 </div>
               </div>
               
-              {/* Feature highlights */}
-              <div className="absolute -right-5 top-10 transform rotate-12">
+              {/* Feature highlights — hidden on small screens to avoid overflow */}
+              <div className="absolute -right-5 top-10 transform rotate-12 hidden sm:block">
                 <div className="bg-white rounded-lg p-3 shadow-lg">
                   <div className="flex items-center gap-2">
                     <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
@@ -148,7 +148,7 @@ const Hero = () => {
                 </div>
               </div>
               
-              <div className="absolute -left-4 bottom-16 transform -rotate-6">
+              <div className="absolute -left-4 bottom-16 transform -rotate-6 hidden sm:block">
                 <div className="bg-white rounded-lg p-3 shadow-lg">
                   <div className="flex items-center gap-2">
                     <div className="w-8 h-8 bg-accent/10 rounded-full flex items-center justify-center">

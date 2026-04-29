@@ -149,7 +149,7 @@ const Contact = () => {
         {/* Form + Info */}
         <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {/* Form */}
-          <div className="bg-white rounded-2xl shadow-lg p-8 md:p-10 border border-gray-100">
+          <div className="bg-white rounded-2xl shadow-lg p-5 sm:p-8 md:p-10 border border-gray-100">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
                 <Bell size={20} className="text-primary" />
@@ -318,7 +318,7 @@ const Contact = () => {
             </div>
 
             {/* Info card */}
-            <div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-100 flex-1">
+            <div className="bg-white rounded-2xl shadow-lg p-5 sm:p-8 border border-gray-100 flex-1">
               <h3 className="text-xl font-bold mb-5">Office Details</h3>
               <div className="space-y-4 mb-7">
                 <div className="flex items-start gap-3">

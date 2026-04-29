@@ -1,5 +1,5 @@
-import { BarChart, ShieldCheck, Users, BadgePercent, Clock, Building2, PanelRight, ReceiptText, Tablet, TrendingUp } from 'lucide-react';
-import { useState } from 'react';
+import { BarChart, ShieldCheck, Users, BadgePercent, Clock, Building2, PanelRight, ReceiptText, Tablet, TrendingUp, ArrowRight } from 'lucide-react';
+import { useState, useMemo } from 'react';
 
 const benefits = [
   {
@@ -85,8 +85,41 @@ const getBenefitGradient = (index: number) => {
   return gradients[index % gradients.length];
 };
 
+const TILLDASH_COST: Record<string, number> = {
+  '1–2': 26000,
+  '3–10': 46000,
+  '10+': 65000,
+};
+
+const fmt = (n: number) =>
+  'KSh ' + Math.round(n).toLocaleString('en-KE');
+
 const ForBusiness = () => {
   const [activeTab, setActiveTab] = useState(0);
+
+  const [roi, setRoi] = useState({
+    cashiers: 4,
+    salary: 30000,
+    transactions: 8000,
+    basket: 2500,
+    locations: '1–2' as keyof typeof TILLDASH_COST,
+  });
+
+  const calc = useMemo(() => {
+    const tilldashCost = TILLDASH_COST[roi.locations];
+    const staffSavings = roi.cashiers * roi.salary * 0.70;
+    // Conservative: recover 10% more transactions by eliminating queue abandonment
+    const revenueRecovery = roi.transactions * 0.10 * roi.basket;
+    const grossBenefit = staffSavings + revenueRecovery;
+    const netBenefit = grossBenefit - tilldashCost;
+    const roiRatio = grossBenefit / tilldashCost;
+    return { staffSavings, revenueRecovery, grossBenefit, tilldashCost, netBenefit, roiRatio };
+  }, [roi]);
+
+  const setField = (field: keyof typeof roi) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    const val = field === 'locations' ? e.target.value : Number(e.target.value);
+    setRoi(prev => ({ ...prev, [field]: val }));
+  };
 
   return (
     <section id="for-business" className="py-20 md:py-32 bg-gradient-to-br from-pink-50 via-purple-50 to-indigo-50 relative overflow-hidden">
@@ -138,8 +171,8 @@ const ForBusiness = () => {
               <button
                 key={index}
                 onClick={() => setActiveTab(index)}
-                className={`px-6 py-4 rounded-xl font-bold transition-all transform hover:scale-105 ${activeTab === index 
-                  ? 'bg-gradient-to-r from-purple-600 to-blue-600 text-white shadow-lg' 
+                className={`px-4 py-3 md:px-6 md:py-4 rounded-xl font-bold text-sm md:text-base transition-all transform hover:scale-105 ${activeTab === index
+                  ? 'bg-gradient-to-r from-purple-600 to-blue-600 text-white shadow-lg'
                   : 'bg-white text-gray-800 hover:bg-gray-50 border-2 border-gray-200 hover:border-purple-300 shadow-md'}`}
               >
                 <div className="flex items-center">
@@ -194,68 +227,141 @@ const ForBusiness = () => {
           </div>
         </div>
         
-        {/* ROI Calculator CTA */}
-        <div className="bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-700 text-white p-8 md:p-12 rounded-2xl shadow-xl">
-          <div className="grid md:grid-cols-5 gap-8 items-center">
-            <div className="md:col-span-3">
-              <h3 className="text-3xl font-bold mb-4 text-white drop-shadow-lg">See Your Potential ROI</h3>
-              <p className="text-white text-lg mb-6 font-medium drop-shadow-md">
-                Our ROI calculator helps you estimate the potential impact of implementing TillDash 
-                in your retail locations based on your specific business metrics.
-              </p>
-              <div className="space-y-4 mb-6">
-                <div className="flex items-center">
-                  <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
-                    <span className="text-white font-bold">1</span>
-                  </div>
-                  <p className="text-white font-medium">Enter your store details and current checkout metrics</p>
-                </div>
-                <div className="flex items-center">
-                  <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
-                    <span className="text-white font-bold">2</span>
-                  </div>
-                  <p className="text-white font-medium">Receive a customized implementation plan</p>
-                </div>
-                <div className="flex items-center">
-                  <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
-                    <span className="text-white font-bold">3</span>
-                  </div>
-                  <p className="text-white font-medium">Review projected savings and revenue increases</p>
-                </div>
-              </div>
+        {/* ROI Calculator */}
+        <div className="bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-700 text-white p-6 sm:p-8 md:p-12 rounded-2xl shadow-xl">
+          <div className="text-center mb-8">
+            <h3 className="text-2xl md:text-3xl font-bold mb-2">Calculate Your Monthly Returns</h3>
+            <p className="text-white/80 text-sm md:text-base">Enter your store details — the numbers update live.</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Inputs */}
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-5 md:p-6 space-y-5">
+              <h4 className="font-bold text-white/90 text-sm uppercase tracking-wider mb-2">Your Store</h4>
+
+              {/* Cashiers slider */}
               <div>
-                <a 
-                  href="#contact" 
-                  className="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-white text-purple-700 font-bold hover:bg-gray-100 transition-all transform hover:scale-105 shadow-lg"
+                <div className="flex justify-between items-center mb-1.5">
+                  <label className="text-sm font-medium text-white/80">Checkout cashiers</label>
+                  <span className="bg-white/20 text-white font-bold text-sm px-2.5 py-0.5 rounded-lg">{roi.cashiers}</span>
+                </div>
+                <input
+                  type="range" min="1" max="20" step="1"
+                  value={roi.cashiers}
+                  onChange={setField('cashiers')}
+                  className="roi-slider"
+                  style={{
+                    background: `linear-gradient(to right, #facc15 ${(roi.cashiers - 1) / 19 * 100}%, rgba(255,255,255,0.25) ${(roi.cashiers - 1) / 19 * 100}%)`
+                  }}
+                />
+                <div className="flex justify-between text-xs text-white/50 mt-1"><span>1</span><span>20</span></div>
+              </div>
+
+              {/* Salary */}
+              <div>
+                <label className="block text-sm font-medium text-white/80 mb-1.5">Avg monthly salary per cashier (KSh)</label>
+                <input
+                  type="number" min="10000" max="200000" step="1000"
+                  value={roi.salary}
+                  onChange={setField('salary')}
+                  className="w-full bg-white/20 text-white placeholder-white/40 rounded-lg px-4 py-2.5 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-yellow-400 border border-white/20"
+                />
+              </div>
+
+              {/* Transactions */}
+              <div>
+                <label className="block text-sm font-medium text-white/80 mb-1.5">Monthly customer transactions</label>
+                <input
+                  type="number" min="100" max="500000" step="100"
+                  value={roi.transactions}
+                  onChange={setField('transactions')}
+                  className="w-full bg-white/20 text-white placeholder-white/40 rounded-lg px-4 py-2.5 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-yellow-400 border border-white/20"
+                />
+              </div>
+
+              {/* Basket value */}
+              <div>
+                <label className="block text-sm font-medium text-white/80 mb-1.5">Average basket value (KSh)</label>
+                <input
+                  type="number" min="100" max="50000" step="100"
+                  value={roi.basket}
+                  onChange={setField('basket')}
+                  className="w-full bg-white/20 text-white placeholder-white/40 rounded-lg px-4 py-2.5 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-yellow-400 border border-white/20"
+                />
+              </div>
+
+              {/* Locations */}
+              <div>
+                <label className="block text-sm font-medium text-white/80 mb-1.5">Number of store locations</label>
+                <select
+                  value={roi.locations}
+                  onChange={setField('locations')}
+                  className="w-full bg-white/20 text-white rounded-lg px-4 py-2.5 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-yellow-400 border border-white/20 cursor-pointer"
                 >
-                  Calculate Your ROI
-                </a>
+                  <option value="1–2" className="text-gray-900">1–2 locations</option>
+                  <option value="3–10" className="text-gray-900">3–10 locations</option>
+                  <option value="10+" className="text-gray-900">10+ locations</option>
+                </select>
               </div>
             </div>
-            <div className="hidden md:block md:col-span-2">
-              <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl">
-                <div className="space-y-4">
-                  <div className="bg-white/10 rounded-lg p-3 flex justify-between">
-                    <span>Checkout time reduction</span>
-                    <span className="font-bold">80%</span>
+
+            {/* Results */}
+            <div className="flex flex-col gap-4">
+              <h4 className="font-bold text-white/90 text-sm uppercase tracking-wider">Your Estimated Monthly Returns</h4>
+
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-5 space-y-3 flex-1">
+                <div className="flex justify-between items-center py-2 border-b border-white/10">
+                  <div>
+                    <p className="text-sm font-medium text-white/80">Staff value freed up</p>
+                    <p className="text-xs text-white/50">70% of cashier salaries reallocated</p>
                   </div>
-                  <div className="bg-white/10 rounded-lg p-3 flex justify-between">
-                    <span>Staff freed from checkout</span>
-                    <span className="font-bold">70%</span>
-                  </div>
-                  <div className="bg-white/10 rounded-lg p-3 flex justify-between">
-                    <span>Customer satisfaction increase</span>
-                    <span className="font-bold">37%</span>
-                  </div>
-                  <div className="bg-white/10 rounded-lg p-3 flex justify-between">
-                    <span>Average ROI timeframe</span>
-                    <span className="font-bold">7 months</span>
-                  </div>
+                  <span className="text-lg font-bold text-yellow-300 ml-4">{fmt(calc.staffSavings)}</span>
                 </div>
-                <div className="mt-5 text-sm text-center text-white/60">
-                  Projected metrics based on industry benchmarks
+
+                <div className="flex justify-between items-center py-2 border-b border-white/10">
+                  <div>
+                    <p className="text-sm font-medium text-white/80">Revenue recovery</p>
+                    <p className="text-xs text-white/50">~10% more transactions captured</p>
+                  </div>
+                  <span className="text-lg font-bold text-yellow-300 ml-4">{fmt(calc.revenueRecovery)}</span>
+                </div>
+
+                <div className="flex justify-between items-center py-2 border-b border-white/10">
+                  <div>
+                    <p className="text-sm font-medium text-white/80">TillDash subscription</p>
+                    <p className="text-xs text-white/50">{roi.locations} location{roi.locations !== '1–2' ? 's' : ''} · SaaS plan</p>
+                  </div>
+                  <span className="text-lg font-bold text-white/70 ml-4">−{fmt(calc.tilldashCost)}</span>
+                </div>
+
+                {/* Net benefit — highlighted */}
+                <div className={`flex justify-between items-center py-3 px-4 rounded-xl ${calc.netBenefit >= 0 ? 'bg-green-500/20 border border-green-400/30' : 'bg-red-500/20 border border-red-400/30'}`}>
+                  <div>
+                    <p className="font-bold text-white">Net monthly benefit</p>
+                    <p className="text-xs text-white/60">Conservative estimate</p>
+                  </div>
+                  <span className={`text-xl font-extrabold ml-4 ${calc.netBenefit >= 0 ? 'text-green-300' : 'text-red-300'}`}>
+                    {calc.netBenefit >= 0 ? '' : '–'}{fmt(Math.abs(calc.netBenefit))}
+                  </span>
+                </div>
+
+                <div className="flex items-center justify-between pt-1">
+                  <span className="text-sm text-white/70">ROI ratio</span>
+                  <span className="text-2xl font-extrabold text-yellow-300">{calc.roiRatio.toFixed(1)}x</span>
                 </div>
               </div>
+
+              <p className="text-xs text-white/40 leading-relaxed">
+                Based on industry data: retailers lose 20–30% of potential transactions to queue abandonment. Revenue recovery uses a conservative 10% recapture estimate. Staff value reflects reallocation, not headcount reduction.
+              </p>
+
+              <a
+                href="#contact"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white text-purple-700 font-bold hover:bg-yellow-50 transition-all transform hover:scale-105 shadow-lg text-sm md:text-base"
+              >
+                Discuss these numbers with our team
+                <ArrowRight size={16} />
+              </a>
             </div>
           </div>
         </div>
