@@ -1,5 +1,6 @@
 import { Mail, Phone, MapPin, Send, Bell } from 'lucide-react';
 import { useState } from 'react';
+import { sendConfirmationEmail } from '../../utils/sendConfirmation';
 
 const WEB3FORMS_KEY = import.meta.env.VITE_WEB3FORMS_KEY as string;
 
@@ -84,6 +85,12 @@ const Contact = () => {
         setFormStatus('success');
         setFormState(emptyForm);
         setTimeout(() => setFormStatus('idle'), 6000);
+        // Fire confirmation email silently — don't block or surface errors to the user
+        sendConfirmationEmail({
+          to_name: formState.name,
+          to_email: formState.email,
+          inquiry_type: formState.type,
+        }).catch(() => {});
       } else {
         throw new Error(data.message || 'Submission failed');
       }

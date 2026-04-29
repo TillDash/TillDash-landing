@@ -1,5 +1,6 @@
 import { Facebook, Twitter, Instagram, Linkedin, Github, Heart } from 'lucide-react';
 import { useState } from 'react';
+import { sendConfirmationEmail } from '../../utils/sendConfirmation';
 
 const WEB3FORMS_KEY = import.meta.env.VITE_WEB3FORMS_KEY as string;
 
@@ -27,6 +28,11 @@ const Footer = () => {
       if (data.success) {
         setWaitlistStatus('success');
         setWaitlistEmail('');
+        sendConfirmationEmail({
+          to_name: waitlistEmail,
+          to_email: waitlistEmail,
+          inquiry_type: 'Waitlist / Newsletter',
+        }).catch(() => {});
       } else {
         throw new Error(data.message);
       }
