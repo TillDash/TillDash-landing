@@ -1,4 +1,4 @@
-import { ArrowRight, Check, ShoppingCart, Clock } from 'lucide-react';
+import { ArrowRight, Check, ShoppingCart, Clock, Bell } from 'lucide-react';
 
 const Hero = () => {
   return (
@@ -15,8 +15,11 @@ const Hero = () => {
           {/* Left Content */}
           <div className="text-white">
             <div className="bg-white/20 backdrop-blur-sm inline-flex items-center px-4 py-2 rounded-full mb-6 border border-white/30">
-              <span className="bg-gradient-to-r from-yellow-400 to-orange-500 text-black text-xs font-bold px-3 py-1 rounded-full mr-2 shadow-lg">NEW</span>
-              <span className="text-white text-sm font-medium">Self-checkout solution for modern businesses</span>
+              <span className="bg-gradient-to-r from-yellow-400 to-orange-500 text-black text-xs font-bold px-3 py-1 rounded-full mr-2 shadow-lg flex items-center gap-1">
+                <span className="w-1.5 h-1.5 bg-black rounded-full animate-ping inline-block"></span>
+                LAUNCHING SOON
+              </span>
+              <span className="text-white text-sm font-medium">Pilot program now open for early partners</span>
             </div>
             
             <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6 text-white drop-shadow-lg">
@@ -33,18 +36,19 @@ const Hero = () => {
             </p>
             
             <div className="flex flex-wrap gap-4 mb-8">
-              <a 
-                href="/register" 
+              <a
+                href="#contact"
                 className="group bg-gradient-to-r from-yellow-400 to-orange-500 text-black hover:from-yellow-300 hover:to-orange-400 font-bold py-4 px-8 md:px-10 rounded-xl text-lg transition-all flex items-center gap-2 hover:gap-3 shadow-2xl hover:shadow-yellow-400/25 transform hover:scale-105"
               >
-                Start Free Trial
+                <Bell size={20} />
+                Request Early Access
                 <ArrowRight size={20} className="transition-all group-hover:translate-x-1" />
               </a>
-              <a 
-                href="#demo" 
+              <a
+                href="#contact"
                 className="border-2 border-white/60 bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 hover:border-white font-semibold py-4 px-8 md:px-10 rounded-xl text-lg transition-all flex items-center gap-2 shadow-lg hover:shadow-white/10"
               >
-                Watch Demo
+                Request a Demo
               </a>
             </div>
             
@@ -59,13 +63,13 @@ const Hero = () => {
                 <div className="w-5 h-5 bg-accent rounded-full flex items-center justify-center">
                   <Check size={12} className="text-white" />
                 </div>
-                <span className="text-sm">Free 14-day trial</span>
+                <span className="text-sm">Limited pilot spots</span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-5 h-5 bg-accent rounded-full flex items-center justify-center">
                   <Check size={12} className="text-white" />
                 </div>
-                <span className="text-sm">No credit card needed</span>
+                <span className="text-sm">No commitment needed</span>
               </div>
             </div>
           </div>

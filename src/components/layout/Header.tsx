@@ -44,16 +44,10 @@ const Header = () => {
 
         <div className="hidden md:flex items-center space-x-4">
           <a
-            href="/login"
-            className={`font-medium px-4 py-2 rounded-lg transition-colors ${isScrolled ? 'text-primary hover:bg-primary/10' : 'text-white hover:bg-white/10'}`}
+            href="#contact"
+            className={`font-bold px-5 py-2.5 rounded-lg transition-all ${isScrolled ? 'bg-primary text-white hover:bg-primary/90' : 'bg-white/20 backdrop-blur-sm text-white border border-white/40 hover:bg-white/30'}`}
           >
-            Log In
-          </a>
-          <a
-            href="/register"
-            className={`font-medium px-4 py-2 rounded-lg transition-colors ${isScrolled ? 'text-primary hover:bg-primary/10' : 'text-white hover:bg-white/10'}`}
-          >
-            Get Started Free
+            Join Waitlist
           </a>
         </div>
 
@@ -82,8 +76,7 @@ const Header = () => {
             {/* <a href="#pricing" className="block py-3 text-gray-700 hover:text-primary hover:bg-gray-50 rounded px-3 font-medium" onClick={() => setIsMenuOpen(false)}>Pricing</a> */}
             <a href="#faq" className="block py-3 text-gray-700 hover:text-primary hover:bg-gray-50 rounded px-3 font-medium" onClick={() => setIsMenuOpen(false)}>FAQ</a>
             <div className="border-t border-gray-200 my-2"></div>
-            <a href="/login" className="block py-3 text-gray-700 hover:text-primary hover:bg-gray-50 rounded px-3 font-medium" onClick={() => setIsMenuOpen(false)}>Log In</a>
-            <a href="/register" className="block py-3 bg-primary/10 text-primary hover:bg-primary/20 rounded px-3 font-medium" onClick={() => setIsMenuOpen(false)}>Get Started Free</a>
+            <a href="#contact" className="block py-3 bg-primary text-white hover:bg-primary/90 rounded px-3 font-bold text-center" onClick={() => setIsMenuOpen(false)}>Join Waitlist</a>
           </div>
         </div>
       )}

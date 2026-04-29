@@ -7,9 +7,13 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "video:dev": "remotion studio src/video-entry.tsx",
+    "video:render": "remotion render src/video-entry.tsx TillDashComparison out/video.mp4",
+    "video:preview": "remotion preview src/video-entry.tsx"
   },
   "dependencies": {
+    "@remotion/cli": "^4.0.339",
     "@tailwindcss/postcss": "^4.1.11",
     "@types/react-router-dom": "^5.3.3",
     "crypto-browserify": "^3.12.1",
@@ -17,6 +21,7 @@
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-router-dom": "^7.7.0",
+    "remotion": "^4.0.339",
     "vite-plugin-node-polyfills": "^0.24.0"
   },
   "devDependencies": {
@@ -37,7 +42,6 @@
     "tailwindcss": "^4.1.11",
     "typescript": "~5.8.3",
     "typescript-eslint": "^8.35.1",
-    
     "vite": "^5.1.4"
   }
 }

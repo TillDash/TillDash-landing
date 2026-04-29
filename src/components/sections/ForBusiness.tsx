@@ -253,7 +253,7 @@ const ForBusiness = () => {
                   </div>
                 </div>
                 <div className="mt-5 text-sm text-center text-white/60">
-                  Based on average metrics from current TillDash clients
+                  Projected metrics based on industry benchmarks
                 </div>
               </div>
             </div>
