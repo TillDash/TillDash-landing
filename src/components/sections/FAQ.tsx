@@ -14,8 +14,8 @@ const faqs = [
         answer: "Simply download our app, open it when you enter a TillDash-enabled store, scan product barcodes as you shop, pay through the app, and show your digital receipt on the way out. No lines, no waiting!"
       },
       {
-        question: "Is TillDash available in my area?",
-        answer: "TillDash is currently available in select regions with partner retailers. Check our app to see which stores near you support TillDash self-checkout. We're expanding rapidly, so check back often!"
+        question: "Is TillDash available yet?",
+        answer: "We're currently in our pre-launch phase with the MVP ready and pilot onboarding underway in Mombasa, Kenya. If you'd like to be among the first — as a shopper or a retail partner — join the waitlist and we'll be in touch with next steps."
       }
     ]
   },
@@ -44,8 +44,8 @@ const faqs = [
     category: "For Businesses",
     items: [
       {
-        question: "How can my business offer TillDash to customers?",
-        answer: "Contact our sales team through the website to discuss integration options. We offer flexible plans for retailers of all sizes and can typically get you set up within 2-4 weeks."
+        question: "How can my business join the pilot program?",
+        answer: "We're currently onboarding a select group of retail partners for our pilot launch. TillDash requires zero hardware investment and can be up and running in just 3–5 days — no disruption to your existing operations. Fill in the contact form on this page, choose 'Becoming a pilot partner', and our team will reach out within 24–48 hours. No commitment required to have that conversation."
       },
       {
         question: "What hardware is required to implement TillDash?",

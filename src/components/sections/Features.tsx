@@ -1,4 +1,4 @@
-import { Scan, Smartphone, Zap, Shield, BarChart2, ShoppingBag, Timer, CreditCard } from 'lucide-react';
+import { Scan, Smartphone, Zap, Shield, BarChart2, ShoppingBag, Timer, WifiOff } from 'lucide-react';
 
 const features = [
   {
@@ -44,9 +44,9 @@ const features = [
     highlight: "bg-secondary"
   },
   {
-    icon: <CreditCard className="w-10 h-10 text-primary" />,
-    title: "Multiple Payment Options",
-    description: "Support for all major payment methods including credit cards, mobile money, and digital wallets.",
+    icon: <WifiOff className="w-10 h-10 text-primary" />,
+    title: "Works Offline",
+    description: "TillDash keeps working even when connectivity drops — transactions sync automatically when the connection is restored.",
     color: "bg-primary/10",
     highlight: "bg-primary"
   },
@@ -133,7 +133,7 @@ const Features = () => {
                     <div className="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center mr-3">
                       <div className="w-2 h-2 rounded-full bg-primary"></div>
                     </div>
-                    <span className="text-gray-700">Reduces checkout staff needs by up to 70%</span>
+                    <span className="text-gray-700">Projected to reduce checkout staff needs by up to 70%</span>
                   </li>
                   <li className="flex items-center">
                     <div className="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center mr-3">

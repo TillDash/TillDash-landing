@@ -19,7 +19,7 @@ const Hero = () => {
                 <span className="w-1.5 h-1.5 bg-black rounded-full animate-ping inline-block"></span>
                 LAUNCHING SOON
               </span>
-              <span className="text-white text-sm font-medium">Pilot program now open for early partners</span>
+              <span className="text-white text-sm font-medium">Mobile self-checkout built for Africa</span>
             </div>
             
             <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6 text-white drop-shadow-lg">
@@ -32,7 +32,7 @@ const Hero = () => {
             </h1>
             
             <p className="text-xl max-w-xl mb-8 text-white font-medium drop-shadow-md leading-relaxed">
-              TillDash empowers customers to scan, pay, and go with our innovative self-checkout mobile app — eliminating lines and transforming the shopping experience for retailers and shoppers alike.
+              TillDash is the only self-checkout solution built for Africa's retail reality — shoppers scan products, pay instantly via M-Pesa or card, and walk out. No queues. No cashier lines. Built for the African market.
             </p>
             
             <div className="flex flex-wrap gap-4 mb-8">

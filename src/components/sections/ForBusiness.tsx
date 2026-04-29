@@ -236,12 +236,12 @@ const ForBusiness = () => {
               <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl">
                 <div className="space-y-4">
                   <div className="bg-white/10 rounded-lg p-3 flex justify-between">
-                    <span>Average checkout time reduction</span>
-                    <span className="font-bold">68%</span>
+                    <span>Checkout time reduction</span>
+                    <span className="font-bold">80%</span>
                   </div>
                   <div className="bg-white/10 rounded-lg p-3 flex justify-between">
-                    <span>Average staff reallocation</span>
-                    <span className="font-bold">42%</span>
+                    <span>Staff freed from checkout</span>
+                    <span className="font-bold">70%</span>
                   </div>
                   <div className="bg-white/10 rounded-lg p-3 flex justify-between">
                     <span>Customer satisfaction increase</span>
@@ -275,11 +275,11 @@ const ForBusiness = () => {
               >
                 Contact Enterprise Sales
               </a>
-              <a 
-                href="#" 
+              <a
+                href="#contact"
                 className="inline-flex items-center justify-center px-8 py-4 border-2 border-purple-300 text-base font-bold rounded-xl text-purple-700 bg-white hover:bg-purple-50 hover:border-purple-400 shadow-md hover:shadow-lg transition-all transform hover:scale-105"
               >
-                View Case Studies
+                Request a Demo
               </a>
             </div>
           </div>
